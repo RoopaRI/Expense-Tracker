@@ -1,3 +1,46 @@
+Expense Tracker
+
+Introduction
+Create a web application for tracking expenses, allowing users to add, edit, and delete expenses based on category and date, as well as view a summary of their expenses.
+
+Features
+    ->Should have a Wallet Balance which by default is set to 5000.
+    ->Wallet Balance can be increased.
+    ->User should not be able to spend more than his available wallet balance. Show an alert if a user tries to do so.
+    ->Add new expenses with details like title, amount, category, and date.
+    ->Wallet Balance should update accordingly.
+    ->Edit existing expenses.
+    ->Delete expenses.
+    ->View a summary of total expenses, categorized by date or type.
+    ->Persist wallet balance and list of expenses in localStorage so that it should be there upon page refresh.
+    ->Responsive design for various screen sizes.
+
+Functional Requirements
+1 Add Expense Form
+Provide fields for title, amount, and date, with validation for required fields.
+
+2 Add Income Form
+Provide a field for adding balance in the wallet.
+
+3 Expense List
+Display a list of expenses with options to edit or delete each expense.
+
+4 Expense Summary
+Show a summary of total expenses in a pie chart.
+
+5 Expense Trends
+Show a bar chart that shows the trending spends based on category.
+
+6 Edit/Delete
+Allow users to edit or delete expenses.
+
+7 Responsive Design:
+ Ensure the application is usable on different devices.
+
+Technologies
+Frontend: React.JS, HTML, CSS, JavaScript.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
