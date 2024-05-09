@@ -1,9 +1,11 @@
 Expense Tracker
 
 Introduction
+
 Create a web application for tracking expenses, allowing users to add, edit, and delete expenses based on category and date, as well as view a summary of their expenses.
 
 Features
+
     ->Should have a Wallet Balance which by default is set to 5000.
     ->Wallet Balance can be increased.
     ->User should not be able to spend more than his available wallet balance. Show an alert if a user tries to do so.
@@ -16,6 +18,7 @@ Features
     ->Responsive design for various screen sizes.
 
 Functional Requirements
+
 1 Add Expense Form
 Provide fields for title, amount, and date, with validation for required fields.
 
@@ -38,6 +41,7 @@ Allow users to edit or delete expenses.
  Ensure the application is usable on different devices.
 
 Technologies
+
 Frontend: React.JS, HTML, CSS, JavaScript.
 
 
