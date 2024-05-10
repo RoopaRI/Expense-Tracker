@@ -3,7 +3,10 @@ import Logo from "./Components/Logo/Logo";
 import Navbar from "./Components/Navbar/Navbar";
 import "./App.css";
 import AppHead from "./Components/AppHead/AppHead";
+import AppBody from "./Components/AppBody/AppBody";
 import { TransactionsContext, MoneyContext } from "./Contexts/AllContexts";
+import { dummyData } from './dummyTransactions';
+
 
 
 function App() {
@@ -11,16 +14,17 @@ function App() {
     balance: 3800,
     expenses: 1200
   })
+  const [transactionData, setTransactionData] = useState(dummyData);
  
   return (
     <main className='App'>
       <MoneyContext.Provider value={[money, setMoney]}>
-      {/* <TransactionsContext.Provider value={[transactionData, setTransactionData]}> */}
+      <TransactionsContext.Provider value={[transactionData, setTransactionData]}>
         <Logo />
         <Navbar />
         <AppHead balance={money.balance} expenses={money.expenses}/>
-        {/* <AppBody transactionData={transactionData}/> */}
-      {/* </TransactionsContext.Provider>  */}
+        <AppBody transactionData={transactionData}/>
+      </TransactionsContext.Provider> 
       </MoneyContext.Provider>
     </main>
   );

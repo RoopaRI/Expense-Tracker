@@ -31,7 +31,6 @@ header{
     }
 }
 
-/* large screens */
 @media screen and (min-width: 929px) {
     header{
         flex-direction: row;

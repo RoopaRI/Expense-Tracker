@@ -4,7 +4,6 @@ import Card from '../Card/Card';
 import PieChartComp from '../PieChart/PieChart';
 
 const AppHead = props => {
-    //props
     const { balance, expenses } = props;
     return (
         <header className='AppHead'>

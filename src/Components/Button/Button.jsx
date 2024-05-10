@@ -1,8 +1,7 @@
 import React from 'react';
 import "./Button.css"
 
-const Button = props => {
-    //props
+export default function Button (props) {
     const { text, background, buttonSize, icon, clickFunction, buttonType } = props;
     return (
         <button 
@@ -14,5 +13,3 @@ const Button = props => {
         </button>
     );
 };
-
-export default Button;

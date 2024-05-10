@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./Card.css"
+import "./Card.css";
 import Button from "../Button/Button";
 
 export default function Card(props) {
