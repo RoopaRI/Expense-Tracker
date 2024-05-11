@@ -1,13 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
-//contexts
 import { TransactionsContext } from "../../Contexts/AllContexts";
 
-const useChartData = initialData => {
-    //context
+export default function useChartData(initialData) {
     const [transactionData, setTransactionData] = useContext(TransactionsContext);
     //states
     const [chartData, setChartData] = useState(initialData);
-    //everytime transactionData updates
+   
     useEffect(()=> {
         setChartData([
             { name: 'Entertainment', value: 0 },
@@ -16,7 +14,7 @@ const useChartData = initialData => {
         ]);
         calculateCategories();
     }, [transactionData])
-    //functions
+  
     const calculateCategories = () => {
         let foodTotal = 0, entertainmentTotal = 0, travelTotal = 0;
         transactionData.forEach(item => {
@@ -37,6 +35,3 @@ const useChartData = initialData => {
 
     return chartData;
 }
-
-
-export default useChartData;

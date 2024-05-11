@@ -3,7 +3,7 @@ import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
 import "./PieChart.css";
 import PieLabel from '../PieLabel/PieLabel';
 import { TransactionsContext } from "../../Contexts/AllContexts";
-// import useChartData from '../customHooks/useChartData';
+import useChartData from '../customHooks/useChartData';
 
 
 const COLORS = ['#FF9304', '#A000FF', '#FDE006'];
@@ -22,16 +22,11 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 };
 
 export default function PieChartComp(){
-    // const chartData  = useChartData([
-    //         { name: 'Entertainment', value: 0 },
-    //         { name: 'Food', value: 0 },
-    //         { name: 'Travel', value: 0 },
-    //     ]);
-    const chartData  = [
-                { name: 'Entertainment', value: 0 },
-                { name: 'Food', value: 0 },
-                { name: 'Travel', value: 0 },
-            ];
+    const chartData  = useChartData([
+            { name: 'Entertainment', value: 0 },
+            { name: 'Food', value: 0 },
+            { name: 'Travel', value: 0 },
+        ]);
         
     return (
         <div className='pieChart'>
