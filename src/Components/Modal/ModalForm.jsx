@@ -1,23 +1,19 @@
 
 import React, { useContext, useEffect, useState } from 'react';
-//components
 import FormButtons from '../FormButtons/FormButtons';
-//contexts
 import { MoneyContext, TransactionsContext } from '../../Contexts/AllContexts';
-//style
 
 
 const ModalForm = props => {
-    //props
+   
     const { toggleModal, formType, existingData } = props;
-    //contexts
     const [money, setMoney] = useContext(MoneyContext);
     const [transactionData, setTransactionData] = useContext(TransactionsContext);
-    //check for existing data to update transaction
+  
     useEffect(()=> {
         if(existingData) updateFormDataWithExistingData();
     }, [])
-    //states
+    
     const [formData, setFormData] = useState({
         name: "",
         price: "",
@@ -25,7 +21,7 @@ const ModalForm = props => {
         category: "",
     })
     const [balanceFormData, setBalanceFormData] = useState({income: ""});
-    //functions
+    
     const updateFormDataWithExistingData = () => {
         console.log(existingData)
         const {name, date, amount, category} = existingData;
@@ -42,7 +38,7 @@ const ModalForm = props => {
     }
     const handleSubmit = evt => {
         evt.preventDefault();
-        // Edit Expense
+       
         if(formType === "Add Balance"){
             setMoney({
                 ...money,
