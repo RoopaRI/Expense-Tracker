@@ -1,28 +1,25 @@
-import React, { useContext, useEffect, useState } from 'react';
-//styles
-import "./TransactionsBody.css"
-//components
+import React, { useContext, useEffect, useState } from 'react'
+import "./TransactionsBody.css";
 import TransactionBar from '../TransactionBar/TransactionBar';
 import PageNavigateBar from './PageNavigateBar';
-//contexts
 import { TransactionsContext } from '../../Contexts/AllContexts';
 
-const TransactionsBody = () => {
-    //contexts
+export default function TransactionsBody () {
+    
     const [transactionData, setTransactionData] = useContext(TransactionsContext);
-    //states
+    
     const [pages, setPages] = useState({ currentPage: 1, totalPages: 1 })
-    //everytime transactionData updates
+  
     useEffect(()=> {
         onLoad();
     }, [transactionData])
-    //functions
+  
     const displayTransactions = () => {
         let key = 0;
         if(transactionData && transactionData.length){
             let arr =[];
-            let startIndex = 5 * (pages.currentPage - 1)
-            let endIndex = (5 * pages.currentPage) - 1
+            let startIndex = 3 * (pages.currentPage - 1)
+            let endIndex = (3 * pages.currentPage) - 1
 
             for(let i = startIndex; i <= endIndex; i++){
                 if(i >= transactionData.length) break;
@@ -36,7 +33,7 @@ const TransactionsBody = () => {
         }
     }
     const onLoad = () =>{
-        setPages({ currentPage: 1, totalPages: Math.ceil(transactionData.length / 5) })
+        setPages({ currentPage: 1, totalPages: Math.ceil(transactionData.length / 3) })
     }
     
     const updatePage = direction => {
@@ -59,5 +56,3 @@ const TransactionsBody = () => {
         </div>
     );
 };
-
-export default TransactionsBody;

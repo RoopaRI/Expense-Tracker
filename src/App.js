@@ -11,8 +11,8 @@ import { dummyData } from './dummyTransactions';
 
 function App() {
   const [money, setMoney] = useState({
-    balance: 3800,
-    expenses: 1200
+    balance: 4300,
+    expenses: 700
   })
   const [transactionData, setTransactionData] = useState(dummyData);
  

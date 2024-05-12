@@ -21,7 +21,7 @@ export default function TopExpenseBody(){
                 <BarChart data={showSortedData()} layout="vertical" barSize={30}>
                     <XAxis type='number' hide/>
                     <YAxis type="category" width={120} dataKey="name"/>
-                    <Bar dataKey="value" fill="#8784D2" />
+                    <Bar dataKey="value" fill="#8784D2" radius={[0, 20, 20, 0]}/>
                     {/* <Tooltip/> */}
                 </BarChart>
             </ResponsiveContainer>
