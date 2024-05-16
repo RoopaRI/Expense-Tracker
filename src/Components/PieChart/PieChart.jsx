@@ -26,7 +26,7 @@ export default function PieChartComp(){
             { name: 'Entertainment', value: 0 },
             { name: 'Food', value: 0 },
             { name: 'Travel', value: 0 },
-        ]);
+        ]).filter((item)=>item.value);
         
     return (
         <div className='pieChart'>

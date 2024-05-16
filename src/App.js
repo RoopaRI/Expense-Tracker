@@ -11,11 +11,48 @@ import { dummyData } from './dummyTransactions';
 
 function App() {
   const [money, setMoney] = useState({
-    balance: 4300,
-    expenses: 700
-  })
-  const [transactionData, setTransactionData] = useState(dummyData);
+    balance: 5000,
+    expenses: 0
+  });
+  const [transactionData, setTransactionData] = useState([]);
+  const [isMounted, setIsMounted] = useState(false);
  
+  useEffect(() => {
+    //Check localStorage
+    const localBalance = localStorage.getItem("money");
+
+    if (!localBalance) {
+      // Set initial values if not present
+      const initialMoney = { balance: 5000, expenses: 0 };
+      setMoney(initialMoney);
+      localStorage.setItem('money', JSON.stringify(initialMoney));
+    } else {
+      // Retrieve existing values
+      setMoney(JSON.parse(localBalance));
+      setIsMounted(true);
+    }
+
+    const items = JSON.parse(localStorage.getItem("expenses"));
+
+    setTransactionData(items || []);
+  }, []);
+
+  // Update local storage when money values change
+  useEffect(() => {
+    if (isMounted) {
+      localStorage.setItem('money', JSON.stringify(money));
+    }
+    
+  }, [money]);
+
+  // Update local storage when transaction data changes
+  useEffect(() => {
+    if (transactionData.length > 0 || isMounted) {
+      localStorage.setItem('expenses', JSON.stringify(transactionData));
+    }
+    
+  }, [transactionData]);
+
   return (
     <main className='App'>
       <MoneyContext.Provider value={[money, setMoney]}>

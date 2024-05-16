@@ -9,7 +9,7 @@ export default function TopExpenseBody(){
             { name: 'food', value: 0 },
             { name: 'entertainment', value: 0 },
             { name: 'travel', value: 0 },
-        ]);
+        ]).filter((item)=>item.value);
     
     const showSortedData = () => {
         return chartData.sort((a,b) => b.value - a.value);

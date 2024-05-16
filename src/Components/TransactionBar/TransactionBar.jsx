@@ -39,6 +39,9 @@ const TransactionBar = props => {
 
         setTransactionData([...transactionData]);
         setMoney({balance: newBalance, expenses: newExpense});
+
+        // Remove the 'expenses' key from local storage
+        localStorage.removeItem('expenses');
     }
     return (
         <div className='TransactionBar'>
