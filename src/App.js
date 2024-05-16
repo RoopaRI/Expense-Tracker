@@ -5,8 +5,6 @@ import "./App.css";
 import AppHead from "./Components/AppHead/AppHead";
 import AppBody from "./Components/AppBody/AppBody";
 import { TransactionsContext, MoneyContext } from "./Contexts/AllContexts";
-import { dummyData } from './dummyTransactions';
-
 
 
 function App() {
